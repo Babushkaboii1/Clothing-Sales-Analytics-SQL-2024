@@ -89,7 +89,7 @@ This dashboard includes:
 - 🌎 **Sales by Region** – Bar chart
 
 🔗 **Live Tableau Dashboard:**  
-[👉 Click to View](https://public.tableau.com/views/Book1_17511112936240/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)  
+[👉 Click to View] https://public.tableau.com/views/Book1_17511112936240/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 --## 📈 Key Insights
 
