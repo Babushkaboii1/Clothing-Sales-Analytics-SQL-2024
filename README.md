@@ -45,7 +45,9 @@ Hoodies generated the most revenue overall, showing they are a key product line.
 Out of 50+ orders, only 2 were refunded, resulting in a 4% refund rate. This is relatively low and suggests high customer satisfaction, good sizing accuracy, or few product defects.
 
 **4. Which customer regions generate the most revenue?**  
-New York and Texas were the most profitable regions, followed by California, Illinois, and Florida. These top regions likely reflect a mix of strong population centers and product-market fit. A marketing focus in these areas could further boost revenue.
+New York and Texas were the most profitable regions, followed by California, Illinois, and Florida. These top regions likely reflect a mix of strong population centers and product-market fit. A marketing focus in 
+these areas could further boost revenue.
+
 ---
 
 ## 💻 SQL Code Samples
