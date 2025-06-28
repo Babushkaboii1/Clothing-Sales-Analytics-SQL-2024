@@ -1,44 +1,66 @@
--- Clothing Sales Data Analysis Queries
--- Dataset table name: clothing_sales
+# 🧵 Clothing Sales Data Analytics Project
 
--- 1. Total Sales (Gross Revenue)
-SELECT 
-  SUM(Total) AS Total_Sales
-FROM clothing_sales;
+This project showcases an end-to-end data analytics process using SQL, Excel, and Tableau to analyze fictional clothing sales data from 2024. It focuses on uncovering key business insights like revenue trends, refund behavior, and regional performance.
 
--- 2. Net Revenue (After Refunds)
-SELECT 
-  SUM(Net_Revenue) AS Net_Revenue
-FROM clothing_sales;
+---
 
--- 3. Refund Rate (Percentage of refunded orders)
-SELECT 
-  ROUND(100 * SUM(CASE WHEN `Refund (Y/N)` = 'Y' THEN 1 ELSE 0 END) / COUNT(*), 2) AS Refund_Rate_Percentage
-FROM clothing_sales;
+## 📁 Project Overview
 
--- 4. Monthly Sales Trend (Gross Sales and Net Revenue)
-SELECT
-  DATE_FORMAT(`Date`, '%Y-%m') AS Month,
-  SUM(Total) AS Gross_Sales,
-  SUM(Net_Revenue) AS Net_Revenue
-FROM clothing_sales
-GROUP BY Month
+**Tools Used:**  
+- SQL (MySQL) – for data analysis  
+- Excel – for data cleaning and prep  
+- Tableau – for data visualization  
+
+**Dataset:**  
+A fictional dataset with 300+ sales records, including fields such as:
+- `Order ID`
+- `Date`
+- `Product`
+- `Category`
+- `Quantity`
+- `Price`
+- `Total`
+- `Refund (Y/N)`
+- `Customer Region`
+- `Net Revenue`
+
+---
+
+## 🧪 Business Questions Answered
+
+1. What are the monthly net revenue trends?
+2. Which products are top sellers?
+3. What is the refund rate?
+4. Which customer regions generate the most revenue?
+
+---
+
+## 💻 SQL Code Samples
+
+```sql
+-- Total Net Revenue
+SELECT SUM(Net_Revenue) AS total_net_revenue FROM sales_data;
+
+-- Monthly Sales Trend
+SELECT MONTH(Date) AS Month, SUM(Net_Revenue) AS Monthly_Revenue
+FROM sales_data
+GROUP BY MONTH(Date)
 ORDER BY Month;
 
--- 5. Top Selling Products (by units sold)
-SELECT
-  Product,
-  SUM(Quantity) AS Total_Units_Sold,
-  SUM(Net_Revenue) AS Total_Net_Revenue
-FROM clothing_sales
+-- Top-Selling Products
+SELECT Product, SUM(Net_Revenue) AS Revenue
+FROM sales_data
 GROUP BY Product
-ORDER BY Total_Units_Sold DESC;
+ORDER BY Revenue DESC;
 
--- 6. Customer Region Performance (Sales by Region)
-SELECT
-  `Customer Region`,
-  SUM(Total) AS Total_Sales,
-  SUM(Net_Revenue) AS Net_Revenue
-FROM clothing_sales
-GROUP BY `Customer Region`
-ORDER BY Net_Revenue DESC;
+-- Refund Rate
+SELECT Refund, COUNT(*) AS Order_Count,
+ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM sales_data), 2) AS Percentage
+FROM sales_data
+GROUP BY Refund;
+
+-- Sales by Customer Region
+SELECT Customer_Region, SUM(Net_Revenue) AS Revenue
+FROM sales_data
+GROUP BY Customer_Region
+ORDER BY Revenue DESC;
