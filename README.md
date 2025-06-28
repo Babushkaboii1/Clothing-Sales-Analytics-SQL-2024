@@ -79,3 +79,23 @@ SELECT Customer_Region, SUM(Net_Revenue) AS Revenue
 FROM sales_data
 GROUP BY Customer_Region
 ORDER BY Revenue DESC;
+
+## 📊 Tableau Dashboard
+
+This dashboard includes:
+- 📈 **Monthly Revenue Trend** – Line chart
+- 🏆 **Top Products by Revenue** – Horizontal bar chart
+- 🔁 **Refund Rate Breakdown** – Pie chart
+- 🌎 **Sales by Region** – Bar chart
+
+🔗 **Live Tableau Dashboard:**  
+[👉 Click to View](https://public.tableau.com/views/Book1_17511112936240/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)  
+
+--## 📈 Key Insights
+
+- 🥇 **March had the highest total revenue**, likely driven by strong hoodie and jogger sales.
+- 👕 **Hoodies were the top-selling product**, with consistently high demand across all regions.
+- 🔁 **Refund rate was only 4%**, which indicates strong customer satisfaction and low product issues.
+- 🌎 **New York and Texas generated the most revenue**, suggesting high-value customer bases.
+- 📉 **Sweaters and Hats underperformed** — a signal to optimize inventory or improve promotion strategy.
+
