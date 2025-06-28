@@ -12,7 +12,7 @@ This project showcases an end-to-end data analytics process using SQL, Excel, an
 - Tableau – for data visualization  
 
 **Dataset:**  
-A fictional dataset with 300+ sales records, including fields such as:
+A fictional dataset with 100+ sales records, including fields such as:
 - `Order ID`
 - `Date`
 - `Product`
